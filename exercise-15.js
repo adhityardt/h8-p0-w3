@@ -1,11 +1,18 @@
-function groupAnimals(animals) {
-  let arrayKosong = [];
-  animals.sort();
-  let counter = 0;
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i][0] == animals[i+1][0]) {
-      arrayKosong.push([animals[i], animals[i+1]]);
+function groupAnimals(animals){
+  var arrHasil = [];
+  animals.sort(function(a, b){return a[0] > b[0]});
+  var Indeks0 = 0;
+  for (var i = 0; i < animals.length; i++){
+    if (arrHasil === undefined || arrHasil.length === 0 ){
+      arrHasil.push([animals[i]]);
+    }else if(arrHasil[Indeks0][0][0] === animals[i][0]) {
+      arrHasil[Indeks0].push(animals[i]);
+    }else{
+      arrHasil.push([animals[i]]);
+      Indeks0++;
     }
   }
-  return arrayKosong;
+  return arrHasil;
 }
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]));
