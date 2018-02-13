@@ -1,6 +1,6 @@
 function groupAnimals(animals){
   var arrHasil = [];
-  animals.sort(function(a, b){return a[0] > b[0]});
+  animals.sort(function(a, b){return a[0] > b[0]});//['ayam']
   var Indeks0 = 0;
   for (var i = 0; i < animals.length; i++){
     if (arrHasil === undefined || arrHasil.length === 0 ){
@@ -15,4 +15,3 @@ function groupAnimals(animals){
   return arrHasil;
 }
 console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
-console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]));
